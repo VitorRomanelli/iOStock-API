@@ -11,7 +11,6 @@ export default (req, res, next) => {
 
     
     const [, token ] = authHeader.split(' ');
-    console.log(authHeader);
 
     try {
         const payload = jwt.verify(token, process.env.APP_SECRET);
