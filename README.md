@@ -2,33 +2,30 @@
 An API for authenticating users, registering and listing products and registering and listing inventory movements. Developed in NodeJS.
 
 # Instalação:
+It is important that when cloning the application, execute the command "npm i" to install all project dependencies listed in the package.json file.
 
-É importante que ao receber a aplicação execute o comando "npm i" para instalar todas as dependências do projeto listadas no arquivo package.json.
+For the database to function normally, it is important that the following steps are followed:
 
-A execução deste comando é necessaria tanto na pasta iOStock, quanto na pasta StockAPI, para que ambas tenham todas as bibliotecas instaladas.
+1 - Create a MySQL database on your machine with the name "io_stock".
 
-Para que o banco de dados funcione normalmente, é importante que se sigam os seguintes passos:
+2 - Enter the directory "src" and the folder "database", with that, you will find a file called db.js.
 
-1 - Crie um banco de dados MySQL em sua máquina com o nome "io_stock".
+3 - In line 3 of the file, replace the words "root" with your MySQL user and the numbers "1117" with your MySQL password.
 
-2 - Entre no diretório "src" e na pasta "database", com isso, encontrará um arquivo chamado db.js.
+4 - Now go to the "models" folder in the "src" directory.
 
-3 - Na linha 3 do arquivo, substitua as palavras "root", pelo seu usuario do MySQL e os números "1117" por sua senha do MySQL.
+5 - Access the "Product.js", "StockMove.js" and "User.js" files.
 
-4 - Agora acesse a pasta "models" do diretório "src".
+6 - In these files you will find a commented line like this: "//Product.sync({force: true});" , it is important that in the first execution of the program this line is
+uncommented so that it creates the corresponding table in its database. After the first execution of the program, the line
+be commented so that it will not be executed again, otherwise the database will recreate all tables at each execution!
+Remembering that these lines of code that execute this command are found in all files in the "models" folder and it is important
+that this step is completed on all these files.
 
-5 - Acesse os arquivos "Product.js", "StockMove.js" e "User.js".
-
-6 - Nestes arquivos você encontra-ra uma linha comentada como essa: "//Product.sync({force: true});"  , é importante que na primeira execução do programa essa linha seja 
-descomentada para que ela crie a tabela correspondente em seu banco de dados. Após a primeira execução do programa, a linha deve 
-ser comentada para que não seja executada outra vez, caso contrário, o banco de dados irá recriar todas as tabelas a cada execução! 
-Lembrando que essas linhas de código que executam esse comando se encontram em todos os arquivos da pasta "models" e é importante 
-que este passo seja concluido em todos estes arquivos.
-
-7 - Com isso o banco de dados estará pronto para uso e em perfeito funcionamento.
+7 - With that, the database will be ready for use and in perfect working order.
 
 # Execução
 
-Para iniciar a API, basta rodar o comando "yarn dev".
+To start the API, just run the command "yarn dev".
 
 ![StockAPI](https://user-images.githubusercontent.com/68878604/100753642-d7af5580-33c8-11eb-88bb-b33f1a3a73ae.PNG)
